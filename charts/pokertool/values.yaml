@@ -1,0 +1,13 @@
+domain: ""
+
+frontend:
+  imageRegistry: "ghcr.io/alliander-opensource"
+  imageName: "pokertool-frontend"
+  imageTag: "v1.0.0"
+  replicas: 1
+
+backend:
+  imageRegistry: "ghcr.io/alliander-opensource"
+  imageName: "pokertool-backend"
+  imageTag: "v1.0.0"
+  replicas: 1

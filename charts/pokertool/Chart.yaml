@@ -1,0 +1,13 @@
+apiVersion: "v2"
+name: "pokertool"
+version: "0.1.0"
+description: "A scrum poker tool made with Angular and Kotlin"
+keywords:
+  - "angular"
+  - "kotlin"
+  - "scrum"
+  - "poker"
+dependencies:
+  - name: common
+    version: 2.27.0
+    repository: https://charts.bitnami.com/bitnami

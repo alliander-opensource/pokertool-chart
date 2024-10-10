@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "common.names.fullname" . }}-backend
+  labels:
+    {{- include "common.labels.standard" . | indent 4 }}
+    app.kubernetes.io/component: backend
+spec:
+  replicas: {{ .Values.backend.replicas }}
+  selector:
+    matchLabels:
+      {{- include "common.labels.standard" . | indent 6 }}
+      app.kubernetes.io/component: backend
+  template:
+    spec:
+      containers:
+        - image: "{{ .Values.backend.imageRegistry }}/{{ .Values.backend.imageName }}:{{ .Values.backend.imageTag }}"
+          name: {{ template "common.names.fullname" . }}-backend
+          ports:
+            - containerPort: 8080
+    metadata:
+      labels:
+        {{- include "common.labels.standard" . | indent 8 }}
+        app.kubernetes.io/component: frontend
