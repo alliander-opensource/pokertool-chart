@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: {{ template "common.names.fullname" . }}-frontend
   labels:
-    {{- include "common.labels.standard" . | indent 4 }}
+    {{- include "common.labels.standard" . | nindent 4 }}
     app.kubernetes.io/component: frontend
 spec:
   ports:
     - port: 80
       targetPort: 80
   selector:
-    {{- include "common.labels.standard" . | indent 4 }}
+    {{- include "common.labels.standard" . | nindent 4 }}
     app.kubernetes.io/component: frontend

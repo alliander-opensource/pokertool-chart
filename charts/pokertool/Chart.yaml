@@ -1,6 +1,6 @@
 apiVersion: "v2"
 name: "pokertool"
-version: "0.1.0"
+version: "0.2.0"
 description: "A scrum poker tool made with Angular and Kotlin"
 keywords:
   - "angular"

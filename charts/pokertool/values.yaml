@@ -1,13 +1,17 @@
-domain: ""
+ingress:
+  enabled: true
+  domain: ""
 
 frontend:
-  imageRegistry: "ghcr.io/alliander-opensource"
-  imageName: "pokertool-frontend"
-  imageTag: "v1.0.0"
+  image:
+    registry: "ghcr.io/alliander-opensource"
+    name: "pokertool-frontend"
+    tag: "v1.0.0"
   replicas: 1
 
 backend:
-  imageRegistry: "ghcr.io/alliander-opensource"
-  imageName: "pokertool-backend"
-  imageTag: "v1.0.0"
+  image:
+    registry: "ghcr.io/alliander-opensource"
+    name: "pokertool-backend"
+    tag: "v1.0.0"
   replicas: 1
