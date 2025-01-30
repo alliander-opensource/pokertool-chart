@@ -2,6 +2,23 @@ apiVersion: v1
 entries:
   pokertool:
   - apiVersion: v2
+    created: "2025-01-30T21:26:58.139358015+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.27.0
+    description: A scrum poker tool made with Angular and Kotlin
+    digest: 31e008e66c943c24326b9895c0c8dffe869463ce66cf8fb17f056c6c61d26671
+    keywords:
+    - angular
+    - kotlin
+    - scrum
+    - poker
+    name: pokertool
+    urls:
+    - https://github.com/alliander-opensource/pokertool-chart/releases/download/pokertool-0.2.0/pokertool-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2025-01-30T20:24:24.326822976+01:00"
     dependencies:
     - name: common
@@ -18,4 +35,4 @@ entries:
     urls:
     - https://github.com/alliander-opensource/pokertool-chart/releases/download/pokertool-0.1.0/pokertool-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-30T20:24:24.326835617+01:00"
+generated: "2025-01-30T21:26:58.139364197+01:00"
