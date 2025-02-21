@@ -6,7 +6,7 @@ frontend:
   image:
     registry: "ghcr.io/alliander-opensource"
     name: "pokertool-frontend"
-    tag: "v1.0.0"
+    tag: "v1.0.1"
   replicas: 1
 
 backend:
