@@ -7,7 +7,3 @@ keywords:
   - "kotlin"
   - "scrum"
   - "poker"
-dependencies:
-  - name: common
-    version: 2.27.0
-    repository: https://charts.bitnami.com/bitnami
