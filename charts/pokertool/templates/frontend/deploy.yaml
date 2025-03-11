@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "common.names.fullname" . }}-frontend
+  name: pokertool-frontend
   labels:
-    {{- include "common.labels.standard" . | nindent 4 }}
+    app.kubernetes.io/name: pokertool
     app.kubernetes.io/component: frontend
 spec:
   replicas: {{ .Values.frontend.replicas }}
   selector:
     matchLabels:
-      {{- include "common.labels.standard" . | nindent 6 }}
+      app.kubernetes.io/name: pokertool
       app.kubernetes.io/component: frontend
   template:
     spec:
       containers:
-        {{- with .Values.frontend.image}}
-        - image: "{{ .registry }}/{{ .name }}:{{ .tag }}"
+        - name: pokertool-frontend
+        {{- with .Values.frontend.image }}
+          image: "{{ .registry }}/{{ .name }}:{{ .tag }}"
         {{- end }}
-          name: {{ template "common.names.fullname" . }}-frontend
           ports:
             - containerPort: 80
     metadata:
       labels:
-        {{- include "common.labels.standard" . | nindent 8 }}
+        app.kubernetes.io/name: pokertool
         app.kubernetes.io/component: frontend
