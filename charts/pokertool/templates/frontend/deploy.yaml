@@ -12,15 +12,24 @@ spec:
       app.kubernetes.io/name: pokertool
       app.kubernetes.io/component: frontend
   template:
-    spec:
-      containers:
-        - name: pokertool-frontend
-        {{- with .Values.frontend.image }}
-          image: "{{ .registry }}/{{ .name }}:{{ .tag }}"
-        {{- end }}
-          ports:
-            - containerPort: 80
     metadata:
       labels:
         app.kubernetes.io/name: pokertool
         app.kubernetes.io/component: frontend
+    spec:
+      containers:
+        - name: pokertool-frontend
+          {{- with .Values.frontend.image }}
+          image: "{{ .registry }}/{{ .name }}:{{ .tag }}"
+          {{- end }}
+          ports:
+            - containerPort: 80
+          {{- with .Values.frontend.resources }}
+          resources:
+            requests:
+              memory: {{ .requests.memory }}
+              cpu: {{ .requests.cpu }}
+            limits:
+              memory: {{ .limits.memory }}
+              cpu: {{ .limits.cpu }}
+          {{- end }}

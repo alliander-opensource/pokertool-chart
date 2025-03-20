@@ -24,3 +24,12 @@ spec:
           {{- end }}
           ports:
             - containerPort: 8080
+          {{- with .Values.backend.resources }}
+          resources:
+            requests:
+              memory: {{ .requests.memory }}
+              cpu: {{ .requests.memory }}
+            limits:
+              memory: {{ .limits.memory }}
+              cpu: {{ .limits.memory }}
+          {{- end }}

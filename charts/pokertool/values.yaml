@@ -1,6 +1,6 @@
 ingress:
   enabled: true
-  domain: ""
+  domain: "test"
 
 frontend:
   image:
@@ -8,6 +8,13 @@ frontend:
     name: "pokertool-frontend"
     tag: "v1.0.1"
   replicas: 1
+  resources:
+    requests:
+      cpu: "10m"
+      memory: "15Mi"
+    limits:
+      cpu: "20m"
+      memory: "30Mi"
 
 backend:
   image:
@@ -15,3 +22,10 @@ backend:
     name: "pokertool-backend"
     tag: "v1.0.0"
   replicas: 1
+  resources:
+    requests:
+      cpu: "10m"
+      memory: "200Mi"
+    limits:
+      cpu: "50m"
+      memory: "200Mi"
